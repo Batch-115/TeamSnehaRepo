@@ -3,6 +3,8 @@ package com.webcore.app.easyemi.loanProcess.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 @Entity
 public class LoanCalculation {
 	@Id

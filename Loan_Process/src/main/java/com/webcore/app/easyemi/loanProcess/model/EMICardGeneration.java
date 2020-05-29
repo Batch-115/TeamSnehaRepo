@@ -1,20 +1,19 @@
 package com.webcore.app.easyemi.loanProcess.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class EMICardGeneration {
 @Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 private int emiCardId;
 private int customerId;
-private int emiCardNo;
-private String customerName;
-private int emiCardCvv;
-private String emiCardGenerationDate;
-private String emiCardExpiredDate;
-private float emiCardGenerationCharges;
-
+private Double currentMaxloanLimit;
+private Double nextMaxLoanLimit;
+private Double interestRate;
 public int getEmiCardId() {
 	return emiCardId;
 }
@@ -27,43 +26,23 @@ public int getCustomerId() {
 public void setCustomerId(int customerId) {
 	this.customerId = customerId;
 }
-public int getEmiCardNo() {
-	return emiCardNo;
+public Double getCurrentMaxloanLimit() {
+	return currentMaxloanLimit;
 }
-public void setEmiCardNo(int emiCardNo) {
-	this.emiCardNo = emiCardNo;
+public void setCurrentMaxloanLimit(Double currentMaxloanLimit) {
+	this.currentMaxloanLimit = currentMaxloanLimit;
 }
-public String getCustomerName() {
-	return customerName;
+public Double getNextMaxLoanLimit() {
+	return nextMaxLoanLimit;
 }
-public void setCustomerName(String customerName) {
-	this.customerName = customerName;
+public void setNextMaxLoanLimit(Double nextMaxLoanLimit) {
+	this.nextMaxLoanLimit = nextMaxLoanLimit;
 }
-public int getEmiCardCvv() {
-	return emiCardCvv;
+public Double getInterestRate() {
+	return interestRate;
 }
-public void setEmiCardCvv(int emiCardCvv) {
-	this.emiCardCvv = emiCardCvv;
+public void setInterestRate(Double interestRate) {
+	this.interestRate = interestRate;
 }
-public String getEmiCardGenerationDate() {
-	return emiCardGenerationDate;
-}
-public void setEmiCardGenerationDate(String emiCardGenerationDate) {
-	this.emiCardGenerationDate = emiCardGenerationDate;
-}
-public String getEmiCardExpiredDate() {
-	return emiCardExpiredDate;
-}
-public void setEmiCardExpiredDate(String emiCardExpiredDate) {
-	this.emiCardExpiredDate = emiCardExpiredDate;
-}
-public float getEmiCardGenerationCharges() {
-	return emiCardGenerationCharges;
-}
-public void setEmiCardGenerationCharges(float emiCardGenerationCharges) {
-	this.emiCardGenerationCharges = emiCardGenerationCharges;
-}
-
-
 
 }
