@@ -1,0 +1,123 @@
+
+ <!-- <div class="container">
+  <h1>Document Verification</h1>
+      
+  <form [formGroup]="form" (ngSubmit)="submit()">
+        
+      <div class="form-group">
+        <div>
+        customerId:<input type="text" formControlName="customerId">
+        </div> 
+
+         <div class="container row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="name" placeholder="image id" [(ngModel)]="imageid" name="name" />
+          </div>
+          <div class="col-md-6">
+            <input type="button" (click)="getImage()" value="Get Image">
+          </div>
+      </div> 
+            <label for="status">Status:</label>
+          <div>
+            <input id="accept" type="radio" value="accept" name="status" formControlName="status">
+            <label for="accept">Accept</label>
+         </div> -->
+
+         <!-- <div>
+            <input id="reject" type="radio" value="reject" name="status" formControlName="status">
+            <label for="female">Reject</label>
+         </div> -->
+            
+          <!-- <div *ngIf="f.status.touched && f.status.invalid" class="alert alert-danger">
+              <div *ngIf="f.status.errors.required">Name is required.</div>
+          </div> 
+      </div>
+      
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button> 
+  </form>
+</div>   -->
+
+
+
+<div class="container">
+  <h1>Document Verification</h1>
+  <div class="row">
+        <div class="form-group col-md-6">
+             <input type="text" class="form-control"   [(ngModel)]="s.dv.customerId" placeholder="Enter Customer ID">
+        </div>
+        <div class="form-group col-md-6">
+           <input type="text" class="form-control"   [(ngModel)]="s.dv.firstLevelVerifyByOE" placeholder="Verify By OE">
+        </div>
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control"    [(ngModel)]="s.dv.firstLevelVerifyBySE" placeholder="Verify By SE" >
+        </div>
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control"   [(ngModel)]="s.dv.secondLevelVerifyByThirdParty" placeholder="OE verify through 3rd party">
+        </div>
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control"    [(ngModel)]="s.dv.approvedByOE" placeholder="Approved By OE" >
+        </div>
+
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control"    [(ngModel)]="s.dv.approvedBySE" placeholder="Approved By SE" >
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control"    [(ngModel)]="s.dv.pendingDocuments" placeholder="Pending Documents" >
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control"    [(ngModel)]="s.dv.remark" placeholder="Remark" >
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control"    [(ngModel)]="s.dv.status" placeholder="status">
+        </div>
+        </div>
+            <div class="form-group"> 
+        <button class="btn btn-success btn-lg btn-block" (click)="submitdata(s.dv)">Submit</button>
+    </div>
+  
+     <div class="form-group"> 
+        <button class="btn btn-warning btn-lg btn-block" (click)="resetdata()">Reset</button>
+    </div> 
+  </div>
+
+  <div class="container">
+    <table class="table table-striped">
+      <tr>
+        <th>DocVerificationId</th>
+        <th>CustId</th>
+        <th>VerifyByOE</th>
+        <th>VerifyBySE</th>
+        <th>VerifyBy3rdParty</th>
+        <th>ApprovedByOE</th>
+        <th>ApprovedBySE</th>
+        <th>PendingDocuments</th>
+        <th>Status</th>
+        <th>Remarks</th>
+        <th>Actions</th>
+      </tr>
+      <tbody >
+        <tr *ngFor='let dv of dvm'>
+          <td>{{dv.documentVerificationId}}</td>
+          <td>{{dv.customerId}}</td>
+          <td>{{dv.firstLevelVerifyByOE}}</td>
+          <td>{{dv.firstLevelVerifyBySE}}</td>
+          <td>{{dv.secondLevelVerifyByThirdParty}} </td>
+          <td>{{dv.approvedByOE}}</td>
+          <td>{{dv.approvedBySE}}</td>
+          <td>{{dv.pendingDocuments}}</td>
+          <td>{{dv.status}}</td>
+          <td>{{dv.remark}}</td>
+          <td><a class="btn">
+            <i class="fa fa-edit" (click)="editdata(dv)"></i>
+          </a>
+          </td>
+          <td><a class="btn">
+            <i class="fa fa-trash" (click)="deletedata(dv)"></i>
+          </a>
+          </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+

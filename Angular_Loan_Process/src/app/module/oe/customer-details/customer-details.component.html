@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>customer Details</h1>
+  <table class="table table-striped">  
+    <thead>
+       <tr class="table-warning">
+         <th>customer Id</th>
+         <th>customer First Name</th>
+         <th>customer Middle Name</th>
+         <th>customerLastName</th>
+         <th>customerDataOfBirth</th>
+         <th>customerGender</th>
+         <th> customerMaritailStatus</th>
+         <th>customerMobileNumber</th>
+         <th>customerAddress</th> 
+         <th>customerEducation</th>    
+         <th>customerAppliedLoadAmount</th>  
+         <th>status</th>  
+         <!-- <th>Edit</th>  
+         <th>Delete</th>   -->
+       </tr>
+      </thead>
+    
+    <tbody>
+      <tr *ngFor='let c of cs'>         
+        <td>{{c.customerId}}</td>
+        <td>{{c.customerFirstName}}</td>
+        <td>{{c.customerMiddleName}}</td>
+        <td>{{c.customerLastName}}</td>
+        <td>{{c.customerDataOfBirth}}</td>
+        <td>{{c.customerGender}}</td>
+        <td>{{c.customerMaritailStatus}}</td>
+        <td>{{c.customerMobileNumber}}</td>
+        <td>{{c.customerAddress}}</td>
+        <td>{{c.customerEducation}}</td>
+        <td>{{c.customerAppliedLoadAmount}}</td>
+        <td>{{c.status}}</td>
+        <!-- <td><a class="btn">
+          <i class="fa fa-edit" (click)="editdata(c)"></i>
+        </a>
+        </td>
+        <td><a class="btn">
+          <i class="fa fa-trash" (click)="deletedata(c)"></i>
+        </a>
+        </td> -->
+        </tr>
+    </tbody>
+  </table>
+</div>

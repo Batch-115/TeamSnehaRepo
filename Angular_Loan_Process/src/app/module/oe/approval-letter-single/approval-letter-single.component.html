@@ -1,0 +1,54 @@
+<div>  
+   
+  <div>
+   <h3 style="color:darkred"> Loan Approval Letter From EasyEmi  </h3>
+   <p style="color: darkmagenta;"><br>
+   Dear Sir,<br>
+   This letter is made in reference to your loan application. 
+   Based on the information you provided in your loan application number {{data.customerId}}, we are pleased to inform you of the approval of your loan based on the following terms and conditions:<br><br>
+
+●	Loan amount of $ {{data.loanAmount}}<br>
+●	Loan interest of {{data.rateOfIntrest}} % applicable in relation to market conditions upon the disbursement of the loan<br>
+●	Product Id : {{data.productId}} <br> 
+
+   This offer is valid for 25 days from the date of this letter<br><br>
+   Disbursement shall be made upon completion of the required documents for the loan  and of the signing of the loan agreement.<br>
+   <br>
+   Regards,<br><br>
+
+   [Your Name and Signature]<br>
+   Loan Administrator<br>
+   Name of Lending Company<br>
+   <br></p>
+ </div>
+<br> <br>
+ <div>
+  <table class="table table-striped">
+    
+      <tr>
+        <th scope="col">ApprovalLetter_Id</th>
+          <th scope="col">Customer_Id</th>
+          <th scope="col">Product_Id</th>
+          <th scope="col">Loan_Amount</th>
+          <th scope="col">Rate_Of_Intrest</th>
+            </tr>
+   
+    <tr>
+      <td>{{data.approvalLetterId}}</td>
+      <td>{{data.customerId}}</td>
+      <td> {{data.productId}} </td>
+      <td>{{data.loanAmount}}</td>
+      <td>{{data.rateOfIntrest}}</td>
+           
+    </tr>
+  
+   </table>
+  </div>
+
+
+
+  
+</div> 
+
+
+

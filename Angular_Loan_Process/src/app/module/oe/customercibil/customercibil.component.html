@@ -1,0 +1,69 @@
+
+<!-- <div>
+<form [formGroup]="cibilservice.customercibilform" (ngSubmit)="onSubmit()">
+  
+ <label>
+    Customer Id:
+    <input type="text" formControlName="customerId"><br>
+  </label>
+
+  <label>
+   Customer cibil score:
+    <input type="text" formControlName="cibilScore"><br>
+    </label>
+    <div class="row">
+      <div class="col-md-6">
+          <button class="btn btn-success btn-block btn-lg" type="submit">Save</button>
+      </div>
+      <div class="col-md-4">
+          <button class="btn btn-primary btn-block btn-lg" (click)='resetdata()'>Reset</button>
+      </div> 
+      </div> 
+</form>
+</div>
+<div>
+  <button (click)="showCibilDetails()">Show loan details</button>
+</div>  -->
+
+<div class="container">
+<div >
+  <nav class="navbar bg-secondary text-white">
+    <h2>Enter Customer Cibil Details</h2>
+    <div >
+      <button class="btn btn-primary" (click)="showCibilDetails()">Show cibil details</button>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+</div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <form [formGroup]="cibilservice.customercibilform" (ngSubmit)="onSubmit()" class="main">
+    
+        <div class=" col-md-10 form-group">         
+          Customer Id:<input type="text"  class="form-control" formControlName="customerId"><br>     
+      </div>
+      <div class="col-md-10 form-group">         
+        Cibil Score:<input type="text"  class="form-control" formControlName="cibilScore"><br>     
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+          <button class="btn btn-success btn-block btn-lg" type="submit">Save</button>
+      </div>
+      <div class="col-md-5">
+          <button class="btn btn-primary btn-block btn-lg" (click)='resetdata()'>Reset</button>
+      </div> 
+      </div> 
+      </form>  
+  </div>
+  <div class="col-md-8">
+    <app-customercibillist></app-customercibillist>
+  </div>
+  </div>
+</div>
+
+
+

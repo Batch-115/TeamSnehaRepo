@@ -1,0 +1,83 @@
+<br><br>
+<button type="button" class="btn btn-success btn-lg btn-block" (click)="register()">clicktoregister</button><br>
+  <button type="button" class="btn btn-success btn-lg btn-block" (click)="entry()">clicktocarddetails</button><br>
+   <button type="button" class="btn btn-success btn-lg btn-block" (click)="clicktoview()">customerlist</button>
+  
+     
+ <div *ngIf="cardform">
+<h3>!!!CARD REGISTRATION FORM!!!</h3>
+<form [formGroup]='carduserform' >
+ 
+  <div class="formGroup">
+  
+    <input type="text" formControlName='emiCardId' placeholder="emiCardId" >
+  </div>
+  <br>
+
+  <div class="formGroup">
+  
+    <input type="text" formControlName='customerId' placeholder="customerId" >
+  </div >
+  <br>
+  <div class="formGroup">
+  
+    <input type="text" formControlName='currentMaxloanLimit' placeholder="currentMaxloanLimit" >
+  </div >
+  <br>
+  <div class="formGroup">
+   
+    <input type="text" formControlName='nextMaxLoanLimit' placeholder="nextMaxLoanLimit" >
+  </div >
+  <br>
+<div class="formGroup">
+    
+    <input type="text" formControlName='interestRate' placeholder="interest rate" >
+  </div >
+  
+  <button type="button" class="btn btn-danger btn-lg" (click)="submitcarduser(carduserform)">SUBMIT</button>
+  </form>
+</div>
+
+
+
+<div *ngIf="entryform">
+<form [formGroup]='logincarduserform' >
+ 
+  <div class="formGroup">
+  
+    <input type="text" formControlName='emiCardId' placeholder="emiCardId" >
+  </div>
+  <button type="button" class="btn btn-danger btn-lg" (click)="submitcarduserid(logincarduserform)">SUBMIT</button>
+  
+</form>
+</div>
+<br><br>
+
+
+
+ 
+<div *ngIf="view">
+<table class="table table-striped">
+  
+    <tr>
+      <th scope="col">emicard_id</th>
+      <th scope="col">customerId</th>
+      
+      
+    </tr>
+ 
+  <tr *ngFor="let data of carddata">
+   
+  <td>{{data.emiCardId}}</td>
+  <td>{{data.customerId}}</td>
+ 
+   <td><button type="button"  class="btn btn-danger btn-sm" (click)="customerdetails(data.emiCardId)">carddetails</button></td>
+
+   <td><a class="btn"><i class="fa fa-trash" (click)="customerdelete(data.emiCardId)"></i></a></td>
+   <td><a class="btn"><i class="fa fa-edit" (click)="customercardedit(data.emiCardId)"></i></a></td>
+
+
+</tr>
+
+ </table>
+</div>

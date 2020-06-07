@@ -1,0 +1,53 @@
+
+<div class="container">
+  <h1>Loan Statement</h1>
+  <div class="row">
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control"   [(ngModel)]="s.ls.tenor" placeholder="Enter tenor">
+</div>
+<div class="form-group col-md-6">
+  <input type="number" class="form-control"   [(ngModel)]="s.ls.customerId" placeholder="Enter Customer id">
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-md-6">
+  <input type="date" class="form-control"    [(ngModel)]="s.ls.firstInstallmentDueDate" placeholder="Enter firstInstallmentDueDate">
+</div>
+
+<div class="form-group col-md-6">
+    <input type="date" class="form-control"   [(ngModel)]="s.ls.loanDisbursalDate" placeholder="Enter loanDisbursalDate">
+</div>
+</div>
+<div class="row">
+  <div class="form-group col-md-6">
+    <input type="date" class="form-control"   [(ngModel)]="s.ls.intersetStartDate" placeholder="Enter intersetStartDate">
+</div>
+
+  <div class="form-group col-md-6">
+    <input type="date" class="form-control"   [(ngModel)]="s.ls.lastInstallmentDueDate" placeholder="Enter lastInstallmentDueDate">
+</div>
+</div>
+<div class="row">
+  <div class="form-group col-md-6">
+      <input type="number" class="form-control"    [(ngModel)]="s.ls.downPayment" placeholder="Enter downPayment">
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control"    [(ngModel)]="s.ls.processingFees" placeholder="Enter processingFees">
+</div>
+<div class="form-group col-md-6">
+  <input type="number" class="form-control"    [(ngModel)]="s.ls.loanAmountWithRateOfInterest" placeholder="Enter loanAmountWithRateOfInterest">
+</div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6"> 
+        <button class="btn btn-success btn-lg btn-block" (click)="submitdata(s.ls)">Submit</button>
+    </div>
+  
+    <div class="form-group col-md-6"> 
+        <button class="btn btn-warning btn-lg btn-block" (click)="resetdata()">reset</button>
+    </div>
+    
+  </div>
+  </div>

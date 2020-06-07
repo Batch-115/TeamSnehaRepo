@@ -1,0 +1,92 @@
+<br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)="activeform()">EMI REGISTRATION</button><br>
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)="loginactiveform()">EMI DETAILS</button><br>
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)="cardactiveform()">EMI CARD INFO</button><br>
+
+
+<div *ngIf="formactive">
+
+<form [formGroup]='userform' >
+ 
+  <div class="formGroup">
+  
+    <input type="text" formControlName='emiDetailsId' placeholder="emiDetailsId" >
+  </div>
+  <br>
+
+  <div class="formGroup">
+  
+    <input type="text" formControlName='customerId' placeholder="customerId" >
+  </div >
+  <br>
+  <div class="formGroup">
+  
+    <input type="text" formControlName='productId' placeholder="productId" >
+  </div >
+  <br>
+  <div class="formGroup">
+   
+    <input type="text" formControlName='customerName' placeholder="customerName" >
+  </div >
+  <br>
+<div class="formGroup">
+    
+    <input type="text" formControlName='monthlyEmiAmount' placeholder="monthlyEmiAmount" >
+  </div >
+  <br>
+<div class="formGroup">
+   
+    <input type="text" formControlName='installment' placeholder="installment" >
+  </div >
+  
+  <button type="button" class="btn btn-danger btn-lg" (click)="submituser(userform)">SUBMIT</button>
+  </form>
+</div>
+
+<div *ngIf="loginformactive">
+
+<form [formGroup]='loginform' >
+ 
+   
+  <br>
+
+  <div class="formGroup">
+  
+    <input type="text" formControlName='emiDetailsId' placeholder="emiDetailsId" >
+  </div >
+  <br>
+   <button type="button" (click)="loginuser(loginform)">LOGIN</button>
+
+
+</form></div>
+
+
+
+
+<div *ngIf="activetable">
+<table class="table table-striped">
+  
+    <tr>
+      <th scope="col">emidetails_id</th>
+      <th scope="col">customerId</th>
+      <th scope="col">customerName</th>
+      
+      
+    </tr>
+ 
+  <tr *ngFor="let data of alldata">
+   
+  <td>{{data.emiDetailsId}}</td>
+  <td>{{data.customerId}}</td>
+  <td>{{data.customerName}}</td>
+  
+   <td><button type="button"  class="btn btn-danger btn-sm" (click)="customerdetails(data.emiDetailsId)">emidetails</button></td>
+   <td><a class="btn"><i class="fa fa-trash" (click)="customerdelete(data.emiDetailsId)"></i></a></td>
+   <td><a class="btn"><i class="fa fa-edit" (click)="customeredit(data.emiDetailsId)"></i></a></td>
+ 
+
+</tr>
+
+ </table>
+</div>
+

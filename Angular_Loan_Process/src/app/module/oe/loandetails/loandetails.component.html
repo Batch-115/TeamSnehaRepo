@@ -1,0 +1,104 @@
+
+<div class=".container-fluid ">
+  <nav class="navbar bg-secondary text-white">
+    <h2>Enter Customer Loan Details</h2>
+    <div >
+      <button class="btn btn-primary" (click)="showLoanDetails()">Show loan details</button>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  
+
+    <!-- <form [formGroup]="loandetailsservice.loanDeatailForm" (ngSubmit)="onSubmit()">
+  
+
+      <label>
+        Customer Id:
+        <input type="text" formControlName="customerId"><br>
+      </label>
+    
+      <label>
+        Loan Account No:
+        <input type="text" formControlName="loanAccountNo"><br>
+      </label>
+      <label>
+        Product Name:
+        <input type="text" formControlName="product"><br>
+      </label>
+  
+    
+  
+    <div formGroupName="loanCalculation">
+      <h3>Loan Calculation</h3>
+  
+      <label>
+        Loan Amount:
+        <input type="text" formControlName="loanAmount"><br>
+      </label>
+  
+      <label>
+        Rate Of Interest:
+        <input type="text" formControlName="rateOfInterest"><br>
+      </label>
+      
+      <label>
+        Loan Tenure:
+        <input type="text" formControlName="tenure"><br>
+      </label>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+          <button class="btn btn-success btn-block btn-lg" type="submit">Save</button>
+      </div>
+      <div class="col-md-4">
+          <button class="btn btn-primary btn-block btn-lg" (click)='resetdata()'>Reset</button>
+      </div> 
+      </div>
+  </form> -->
+  <div>
+  <form [formGroup]="loandetailsservice.loanDeatailForm" (ngSubmit)="onSubmit()" class="main">
+    <div class="col-md-6 form-group">         
+        Customer Id:<input type="text"  class="form-control" formControlName="customerId"><br>     
+    </div>
+    <div class="col-md-6 form-group">         
+      Loan Account No:<input type="text"  class="form-control" formControlName="loanAccountNo"><br>     
+  </div>
+  <div class="col-md-6 form-group">         
+    Product:<input type="text"  class="form-control" formControlName="product"><br>     
+</div>
+  
+<div formGroupName="loanCalculation">
+  <div class="col-md-6 form-group">         
+    Loan Amount:<input type="text"  class="form-control" formControlName="loanAmount"><br>     
+</div>
+  <div class="col-md-6 form-group">         
+   Rate Of Interest:<input type="text"  class="form-control" formControlName="rateOfInterest">
+    
+</div>
+<div class="col-md-6 form-group">         
+  Tenure:<input type="text"  class="form-control" formControlName="tenure"><br>     
+</div>
+
+</div>
+  <div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-success btn-block btn-lg" type="submit">Save</button>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-warning btn-block btn-lg" (click)='resetdata()'>Reset</button>
+    </div> 
+    </div>
+  </form>
+</div>
+  </div>
+
+
+  <div >
+    <button class="btn btn-primary" (click)="showLoanDetails()">Show loan details</button>
+  </div>
+
+
+

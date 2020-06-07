@@ -1,0 +1,49 @@
+
+
+
+
+<div class="container">
+  <h1>Loan Account Statement</h1>
+  <table class="table table-striped">  
+    <thead>
+       <tr class="table-warning">
+         <th>Statement Id</th>
+         <th>Customer Id</th>
+         <th>Statement tenor</th>
+         <th>Statement first Installment DueDate</th>
+         <th>Statement loan Disbursal Date</th>
+         <th>Statement last Installment Due Date</th>
+         <th>Statement downPayment</th>
+         <th>Statement processingFees</th>
+         <th>Statement loanAmountWithRateOfInterest</th> 
+         <th>Edit</th>    
+         <th>Delete</th>           
+       </tr>
+      </thead>
+    
+    <tbody>
+      <tr *ngFor='let ls of lcs'>         
+        <td>{{ls.loanStatementId}}</td>
+        <td>{{ls.customerId}}</td>
+        <td>{{ls.tenor}}</td>
+        <td>{{ls.firstInstallmentDueDate}}</td>
+        <td>{{ls.loanDisbursalDate}}</td>
+        <td>{{ls.lastInstallmentDueDate}}</td>
+        <td>{{ls.intersetStartDate}}</td>
+        <td>{{ls.downPayment}}</td>
+        <td>{{ls.processingFees}}</td>
+        <td>{{ls.loanAmountWithRateOfInterest}}</td>
+        <td><a class="btn">
+          <i class="fa fa-edit" (click)="editdata(ls)"></i>
+        </a>
+        </td>
+        <td><a class="btn">
+          <i class="fa fa-trash" (click)="deletedata(ls)"></i>
+        </a>
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+

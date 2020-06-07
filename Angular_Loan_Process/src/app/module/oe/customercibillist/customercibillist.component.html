@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr >
+        <th scope="col">Id</th>
+        <th scope="col">cus_Id</th>
+        <th scope="col">cibilScore</th>
+        <th scope="col">Remark</th>
+        <th scope="col">status</th>
+        <th scope="col">Date&Time</th>
+        
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor='let u of customercibil'>
+        <td>{{u.cibilId}}</td>
+        <td> {{u.customerId}} </td>
+        <td> {{u.cibilScore}} </td>
+        <td>{{u.cibilRemark}}</td>
+        <td>{{u.status}}</td>
+        <td>{{u.cibilScoreDateTime}}</td>
+                
+        <td><a class="btn">
+          <i class="fa fa-edit" (click)="editdata(u)"></i>
+        </a>
+        </td>
+        <td><a class="btn">
+          <i class="fa fa-trash" (click)="deletedata(u)"></i>
+        </a>
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
