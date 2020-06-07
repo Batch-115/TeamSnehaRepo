@@ -1,0 +1,43 @@
+<div>
+<div>
+    <form  [formGroup]='searchForm'(ngSubmit)= " dataget()">
+<br><br>
+      Customer_Id  :<input type="text" formControlName="customerId" ><br>
+
+      Product_Id   :<input type="text" formControlName=" productId" ><br>
+                    
+      Loan_Id      :<input type="text" formControlName="loanId" ><br>
+
+      Loan_Amount  : <input type="text" formControlName="loanAmount" ><br>
+           
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+<div>
+<h3> Loan Approval Letter From EasyEmi  </h3>
+</div>
+  <p>  
+
+<br>
+Dear Sir,<br></p>
+
+<p>
+This letter is made in reference to your loan application number{{searchForm.loan_Id}}.Based on the information you provided in your loan application,<br>
+ we are pleased to inform you of the approval of your loan based on the following terms and conditions:<br>
+
+●	Loan amount of {{searchForm.loanAmount}}<br>
+●	Loan interest of 11 % applicable in relation to market conditions upon the disbursement of the loan<br>
+●	Product Id : {{searchForm.productId}}<br>
+●	Customer Id : {{searchForm.customerId }}<br>
+
+This offer is valid for 25 days from the date of this letter<br><br>
+Disbursement shall be made upon completion of the required documents for the loan and of the signing of the loan agreement.<br>
+</p>
+Regards,<br><br>
+
+[Your Name and Signature]<br>
+Loan Administrator<br>
+Name of Lending Company<br>
+</div>
+
+

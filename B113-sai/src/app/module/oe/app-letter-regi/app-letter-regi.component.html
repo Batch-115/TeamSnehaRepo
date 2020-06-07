@@ -1,0 +1,94 @@
+
+
+
+<div class="container">
+ 
+    <h3>Approval Letter Registration </h3><br>
+
+    <button type="button" class="btn btn-primary btn-lg" (click)="activeform()">Approval Letter REGISTRATION</button>
+<button type="button" class="btn btn-primary btn-lg" (click)="loginactiveform()">Approval Letter DETAILS</button>
+  
+
+<div *ngIf="formactive">
+
+<form [formGroup]='userform' >
+ 
+ 
+
+  <div class="formGroup">
+  
+    <input type="text" formControlName='customerId' placeholder="customerId" >
+  </div >
+  <br>
+  <div class="formGroup">
+  
+    <input type="text" formControlName='productId' placeholder="productId" >
+  </div >
+  <br>
+  <div class="formGroup">
+   
+    <input type="text" formControlName='loanAmount' placeholder="loanAmount" >
+  </div >
+  <br>
+<div class="formGroup">
+    
+    <input type="text" formControlName='rateOfIntrest' placeholder="Rate Of Intrest" >
+  </div >
+  <br>
+
+    <button type="button" (click)="submituser(userform)">SUBMIT</button>
+  </form>
+</div>
+
+<div *ngIf="loginformactive">
+
+<form [formGroup]='loginform' >
+ 
+   
+  <br>
+
+  <div class="formGroup">
+  
+    <input type="text" formControlName='approvalLetterId' placeholder="Approval Letter Id" >
+  </div >
+  <br>
+   <button type="button" (click)="loginuser(loginform)">LOGIN</button>
+
+
+</form></div>
+
+
+
+
+<div *ngIf="activetable">
+<table class="table table-striped">
+  
+    <tr>
+      <th scope="col">ApprovalLetter_Id</th>
+        <th scope="col">Customer_Id</th>
+        <th scope="col">Product_Id</th>
+        <th scope="col">Loan_Amount</th>
+        <th scope="col">Rate_Of_Intrest</th>
+          </tr>
+ 
+  <tr *ngFor="let a of alldata">
+   
+    <td>{{a.approvalLetterId}}</td>
+    <td>{{a.customerId}}</td>
+    <td> {{a.productId}} </td>
+    <td>{{a.loanAmount}}</td>
+    <td>{{a.rateOfIntrest}}</td>
+  
+   <td><button type="button"  class="btn btn-danger" (click)="customerdetails(a.approvalLetterId)">Approval Letter Details</button></td>
+   
+  </tr>
+
+ </table>
+</div>
+
+
+</div>
+
+
+
+
